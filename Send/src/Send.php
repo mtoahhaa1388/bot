@@ -3,48 +3,37 @@
 namespace Send;
 
 
-class Send {
+$update = file_get_contents("php://input");
+$update_array = json_decode($update, true);
 
-    public $token;
-    public $inData;
-    public $tData;
 
-    public $message;
-    public $text;
-    public $chat;
-    public $chat_id;
+if (isset($update_array["message"])){
 
-public function __construct() {
-
-     $this->token = "6862940508:AAFdMr40N4CcW8gYH4I3rMD6ka6_6-ADWxg";
-     $this->inData = file_get_contents("php://input");
-     $this->tData = json_decode($this->inData);
-
-     $this->message = $this->tData['message'];
-     $this->text = $this->message['text'];
-     $this->chat = $this->message['chat'];
-     $this->chat_id = $this->chat['id'];
+$text = $update_array["message"]["text"];
+$chat_id = $update_array["message"]["chat"]["id"];
 
 }
-    public function bot ($method , $data=[]){
-        $url = "https://ipa.telegram.org/bot" . $this->token . "/" . $method;
-        $c = curl_init();
-        curl_setopt($c , CURLOPT_URL , $url);
-        curl_setopt($c , CURLOPT_RETURNTRANSFER , TRUE);
-        curl_setopt($c , CURLOPT_PROXY , "tis.tgproxy.today:8443");
-        curl_setopt($c , CURLOPT_POSTFIELDS , $data);
-        return $c = curl_exec($c);
-    }
-    
-    
-    public function send($text){
-        $this->bot("sendMessage" , [
-            'chat_id' => $this->chat_id,
-            'text' => $text
-        ]);
-    }
+
+
+$reply = $GLOBALS['text'];
+$url = "https://api.telegram.org/bot" . "6862940508:AAFdMr40N4CcW8gYH4I3rMD6ka6_6-ADWxg" . "/sendMessage";
+$send = ['chat_id' => $GLOBALS['chat_id'] , 'text' => $reply];
+
+
+function send_reply($url , $reply){
+    $c = curl_init();
+    curl_setopt($c, CURLOPT_URL, $url);
+    curl_setopt($c, CURLOPT_POSTFIELDS,$reply);
+    return $result = curl_exec($c);
+    curl_close($c);
 }
-    
+
+
+send_reply($url , $reply)
+
+
+
+
 
 
 
