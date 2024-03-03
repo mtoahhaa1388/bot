@@ -1,0 +1,19 @@
+{
+    "name": "taha/pro",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Send\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "taha",
+            "email": "mtoahhaa1388@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.8"
+    }
+}

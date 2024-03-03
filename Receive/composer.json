@@ -1,0 +1,17 @@
+{
+    "name": "taha/bot",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Receive\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mahdyaralipor",
+            "email": "mahdyaralipor0@gmail.com"
+        }
+    ],
+    "require": {}
+}
