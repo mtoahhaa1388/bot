@@ -1,10 +1,12 @@
 <?php
-
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
 
 $update = file_get_contents("php://input");
 $update_array = json_decode($update, true);
 
+die();
 
 if (isset($update_array["message"])){
 
@@ -23,7 +25,6 @@ function send_reply($url , $reply){
     $c = curl_init();
     curl_setopt($c, CURLOPT_URL, $url);
     curl_setopt($c, CURLOPT_POSTFIELDS,$reply);
-    curl_setopt($c, CURLOPT_PROXY, "");
     return $result = curl_exec($c);
     curl_close($c);
 }

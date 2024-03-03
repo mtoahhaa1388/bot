@@ -1,6 +1,8 @@
 <?php
 
 require_once __DIR__ . "./vendor/autoload.php";
+require_once __DIR__ . "./src/Send.php";
+
 // require_once __DIR__ . "/../Api/index.php";
 // require_once __DIR__ . "/../Receive/index.php";
 
