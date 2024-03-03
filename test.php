@@ -1,5 +1,6 @@
 <?php
-$message = range(1,100);
+$range = range (1,100);
+$message = implode(",",$range);
 $chatIds = array("6932747905"); // AND SOME MORE
 foreach($chatIds as $chatId) {
     // Send Message To chat id
