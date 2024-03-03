@@ -1,6 +1,5 @@
 <?php
 
-namespace Send;
 
 
 $update = file_get_contents("php://input");
@@ -24,6 +23,7 @@ function send_reply($url , $reply){
     $c = curl_init();
     curl_setopt($c, CURLOPT_URL, $url);
     curl_setopt($c, CURLOPT_POSTFIELDS,$reply);
+    curl_setopt($c, CURLOPT_PROXY, "");
     return $result = curl_exec($c);
     curl_close($c);
 }
