@@ -30,7 +30,7 @@ function send_reply($url , $reply){
 }
 
 
-send_reply($url , $reply)
+send_reply($url , $reply);
 
 
 
