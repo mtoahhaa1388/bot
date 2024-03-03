@@ -9,7 +9,7 @@ use Send\Send;
 $Send = new Send();
 
 
-$Send->send("fjghbjfgh");
+$Send->send("hello");
 
 // $tools = $Tools->ToolsPage();
 // $tool = $Tools->OneTool();

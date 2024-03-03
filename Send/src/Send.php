@@ -20,7 +20,7 @@ public function __construct() {
      $this->inData = file_get_contents("php://input");
      $this->tData = json_decode($this->inData);
 
-     $this->message = $this->tData['message'];
+     $this->message = $this->tData->'message';
      $this->text = $this->message['text'];
      $this->chat = $this->message['chat'];
      $this->chat_id = $this->chat['id'];
@@ -31,7 +31,7 @@ public function __construct() {
         $c = curl_init();
         curl_setopt($c , CURLOPT_URL , $url);
         curl_setopt($c , CURLOPT_RETURNTRANSFER , TRUE);
-        curl_setopt($c , CURLOPT_PROXY , "socks5h://127.0.0.1:9050");
+        curl_setopt($c , CURLOPT_PROXY , "tis.tgproxy.today:8443");
         curl_setopt($c , CURLOPT_POSTFIELDS , $data);
         return $c = curl_exec($c);
     }
