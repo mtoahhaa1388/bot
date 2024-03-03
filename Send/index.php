@@ -4,7 +4,6 @@ require_once __DIR__ . "./vendor/autoload.php";
 require_once __DIR__ . "/../Api/index.php";
 require_once __DIR__ . "/../Receive/index.php";
 
-
 use GuzzleHttp\Client;
 use Send\Send;
 $Send = new Send();
