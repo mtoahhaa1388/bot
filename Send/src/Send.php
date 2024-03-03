@@ -20,7 +20,7 @@ public function __construct() {
      $this->inData = file_get_contents("php://input");
      $this->tData = json_decode($this->inData);
 
-     $this->message = $this->tData->'message';
+     $this->message = $this->tData['message'];
      $this->text = $this->message['text'];
      $this->chat = $this->message['chat'];
      $this->chat_id = $this->chat['id'];
