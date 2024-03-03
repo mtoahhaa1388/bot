@@ -33,13 +33,14 @@ public function __construct() {
         curl_setopt($c , CURLOPT_RETURNTRANSFER , TRUE);
         curl_setopt($c , CURLOPT_PROXY , "socks5h://127.0.0.1:9050");
         curl_setopt($c , CURLOPT_POSTFIELDS , $data);
+        return $c = curl_exec($c);
     }
     
     
     public function send($text){
         $this->bot("sendMessage" , [
             'chat_id' => $this->chat_id,
-            'text' => $this->text
+            'text' => $text
         ]);
     }
 }
