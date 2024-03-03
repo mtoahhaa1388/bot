@@ -26,7 +26,6 @@ function send_reply($url , $reply){
     curl_setopt($c, CURLOPT_URL, $url);
     curl_setopt($c, CURLOPT_POSTFIELDS,$reply);
     return $result = curl_exec($c);
-    curl_close($c);
 }
 
 
