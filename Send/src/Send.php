@@ -38,8 +38,8 @@ public function __construct() {
     
     public function send($text){
         $this->bot("sendMessage" , [
-            'chat_id' => $chat_id,
-            'text' => "$text"
+            'chat_id' => $this->chat_id,
+            'text' => $this->text
         ]);
     }
 }
