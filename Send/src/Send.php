@@ -6,11 +6,11 @@ ini_set('display_errors', '1');
 $update = file_get_contents("php://input");
 $update_array = json_decode($update, true);
 
-die();
+
 
 if (isset($update_array["message"])){
 
-$text = $update_array["message"]["text"];
+$text = "hello";
 $chat_id = $update_array["message"]["chat"]["id"];
 
 }
